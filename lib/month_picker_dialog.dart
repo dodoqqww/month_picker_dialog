@@ -44,7 +44,7 @@ class _MonthPickerDialog extends StatefulWidget {
   final DateTime? initialDate, firstDate, lastDate;
   final MaterialLocalizations localizations;
   final Locale? locale;
-  final okText;
+  final String okText;
 
   const _MonthPickerDialog({
     Key? key,
@@ -162,7 +162,7 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
           FloatingActionButton.extended(
             onPressed: () => Navigator.pop(context, selectedDate),
             icon: Icon(Icons.done),
-            label: widget.okText,
+            label: Text(widget.okText),
           )
         ],
       ),
