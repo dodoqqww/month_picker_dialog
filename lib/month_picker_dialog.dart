@@ -70,7 +70,8 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   @override
   void initState() {
     super.initState();
-    selectedDate = DateTime(widget.initialDate!.year, widget.initialDate!.month);
+    selectedDate =
+        DateTime(widget.initialDate!.year, widget.initialDate!.month);
     if (widget.firstDate != null)
       _firstDate = DateTime(widget.firstDate!.year, widget.firstDate!.month);
     if (widget.lastDate != null)
@@ -116,6 +117,7 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
       data:
           Theme.of(context).copyWith(dialogBackgroundColor: Colors.transparent),
       child: Dialog(
+        shape: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
