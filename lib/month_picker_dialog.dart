@@ -107,6 +107,10 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
     var header = buildHeader(theme, locale);
     var pager = buildPager(theme, locale);
     var content = Material(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(25.0),
+              bottomRight: Radius.circular(25.0))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [pager, buildButtonBar(context)],
@@ -159,7 +163,8 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   Widget buildHeader(ThemeData theme, String locale) {
     return Material(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(25.0))),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25.0), topRight: Radius.circular(25.0))),
       color: theme.primaryColor,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
