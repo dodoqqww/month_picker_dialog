@@ -148,13 +148,13 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   ) {
     return ButtonBar(
       children: <Widget>[
-        FlatButton(
+        IconButton(
           onPressed: () => Navigator.pop(context, null),
-          child: Text(widget.localizations.cancelButtonLabel),
+          icon: Icon(Icons.arrow_back),
         ),
-        FlatButton(
+        FloatingActionButton(
           onPressed: () => Navigator.pop(context, selectedDate),
-          child: Text(widget.localizations.okButtonLabel),
+          child: Icon(Icons.done),
         )
       ],
     );
