@@ -146,7 +146,8 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   Widget buildButtonBar(
     BuildContext context,
   ) {
-    return ButtonBar(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         IconButton(
           onPressed: () => Navigator.pop(context, null),
