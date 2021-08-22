@@ -117,8 +117,8 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
       data:
           Theme.of(context).copyWith(dialogBackgroundColor: Colors.transparent),
       child: Dialog(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(25.0))),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
