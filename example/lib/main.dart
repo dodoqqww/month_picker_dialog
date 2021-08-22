@@ -61,6 +61,7 @@ class _MyAppState extends State<MyApp> {
             onPressed: () {
               showMonthPicker(
                 context: context,
+                okText: "asd",
                 firstDate: DateTime(DateTime.now().year - 1, 5),
                 lastDate: DateTime(DateTime.now().year + 1, 9),
                 initialDate: selectedDate ?? widget.initialDate,

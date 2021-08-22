@@ -16,6 +16,7 @@ import 'package:rxdart/rxdart.dart';
 Future<DateTime?> showMonthPicker({
   required BuildContext context,
   required DateTime initialDate,
+  required String okText,
   DateTime? firstDate,
   DateTime? lastDate,
   Locale? locale,
@@ -31,6 +32,7 @@ Future<DateTime?> showMonthPicker({
     builder: (context) => _MonthPickerDialog(
       initialDate: initialDate,
       firstDate: firstDate,
+      okText: okText,
       lastDate: lastDate,
       locale: locale,
       localizations: localizations,
@@ -42,11 +44,13 @@ class _MonthPickerDialog extends StatefulWidget {
   final DateTime? initialDate, firstDate, lastDate;
   final MaterialLocalizations localizations;
   final Locale? locale;
+  final okText;
 
   const _MonthPickerDialog({
     Key? key,
     required this.initialDate,
     required this.localizations,
+    required this.okText,
     this.firstDate,
     this.lastDate,
     this.locale,
@@ -155,9 +159,10 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
             onPressed: () => Navigator.pop(context, null),
             icon: Icon(Icons.arrow_back),
           ),
-          FloatingActionButton(
+          FloatingActionButton.extended(
             onPressed: () => Navigator.pop(context, selectedDate),
-            child: Icon(Icons.done),
+            icon: Icon(Icons.done),
+            label: widget.okText,
           )
         ],
       ),
