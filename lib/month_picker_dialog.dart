@@ -146,18 +146,21 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   Widget buildButtonBar(
     BuildContext context,
   ) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        IconButton(
-          onPressed: () => Navigator.pop(context, null),
-          icon: Icon(Icons.arrow_back),
-        ),
-        FloatingActionButton(
-          onPressed: () => Navigator.pop(context, selectedDate),
-          child: Icon(Icons.done),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 5, left: 5, right: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          IconButton(
+            onPressed: () => Navigator.pop(context, null),
+            icon: Icon(Icons.arrow_back),
+          ),
+          FloatingActionButton(
+            onPressed: () => Navigator.pop(context, selectedDate),
+            child: Icon(Icons.done),
+          )
+        ],
+      ),
     );
   }
 
